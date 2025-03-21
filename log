@@ -79,3 +79,15 @@ Thu, Mar 20, 2025 10:56:11 PM:
  tests:  3|2
 total_score: 40/70
 cfa7434
+Thu, Mar 20, 2025 11:55:25 PM: 
+ exercises.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+In file included from test.c:5:0:
+exercises.c: In function 'copia_pila':
+exercises.c:107:22: error: implicit declaration of function 'createStack' [-Werror=implicit-function-declaration]
+    Stack* pila_aux = createStack();
+                      ^~~~~~~~~~~
+exercises.c:107:22: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+cc1.exe: all warnings being treated as errors
+Compilation failed
+8923c9a
