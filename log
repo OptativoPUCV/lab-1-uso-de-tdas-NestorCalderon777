@@ -49,3 +49,9 @@ Thu, Mar 20, 2025 10:47:57 PM:
  1 file changed, 9 insertions(+)
  tests:  0|0
 3782ba9
+Thu, Mar 20, 2025 10:52:44 PM: 
+ exercises.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+ tests:  3|2
+total_score: 40/70
+c8037a4
