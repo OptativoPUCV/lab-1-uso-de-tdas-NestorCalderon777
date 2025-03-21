@@ -43,7 +43,7 @@ Al finalizar retorna la lista creada.
 
 List* crea_lista() {
    List* L = create_list();
-   }
+   
    return L;
 }
 
@@ -59,7 +59,7 @@ int sumaLista(List *L) {
    void* actual = first(L);
 
    while(actual != NULL){
-      sumaLista += actual;
+      sumaLista += *(int*)actual;
       actual = next(L);
    }
    return sumaLista;
@@ -81,7 +81,7 @@ void eliminaElementos(List*L, int elem){
    void* actual = first(L);
 
    while(actual != NULL){
-      if(actual == elem){
+      if(*(int*)actual == elem){
          popCurrent(L);
          actual = next(L);
       }
