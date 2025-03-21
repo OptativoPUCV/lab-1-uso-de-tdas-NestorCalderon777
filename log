@@ -2,3 +2,33 @@ Thu, Mar 20, 2025 10:06:34 PM:
  tests:  0|5
 total_score: 0/70
 3f6cb15
+Thu, Mar 20, 2025 10:36:20 PM: 
+ exercises.c | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+In file included from test.c:5:0:
+exercises.c: In function 'crea_lista':
+exercises.c:45:10: error: unused variable 'L' [-Werror=unused-variable]
+    List* L = create_list();
+          ^
+exercises.c: At top level:
+exercises.c:47:4: error: expected identifier or '(' before 'return'
+    return L;
+    ^~~~~~
+exercises.c:48:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+exercises.c: In function 'sumaLista':
+exercises.c:62:17: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+       sumaLista += actual;
+                 ^~
+exercises.c: In function 'eliminaElementos':
+exercises.c:84:17: error: comparison between pointer and integer [-Werror]
+       if(actual == elem){
+                 ^~
+exercises.c: In function 'crea_lista':
+exercises.c:46:4: error: control reaches end of non-void function [-Werror=return-type]
+    }
+    ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+c857e2b
