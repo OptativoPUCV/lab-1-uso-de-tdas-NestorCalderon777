@@ -180,3 +180,9 @@ arraylist.c:37:6: error: 'pushFront' defined but not used [-Werror=unused-functi
 cc1.exe: all warnings being treated as errors
 Compilation failed
 21d4433
+Sat, Mar 22, 2025 11:41:52 AM: 
+ exercises.c | 26 ++++++++++++--------------
+ 1 file changed, 12 insertions(+), 14 deletions(-)
+ tests:  9|0
+total_score: 70/70
+5978038

@@ -128,38 +128,36 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 
 int parentesisBalanceados(char *cadena) {
    char *PC = NULL;  
-    int top = -1;     
+   int primero = -1;     
 
     
-    for (int k = 0; cadena[k] != '\0'; k++) {
-        char current = cadena[k];
+   for (int k = 0; cadena[k] != '\0'; k++) {
+      char current = cadena[k];
 
+      if (current == '(' || current == '[' || current == '{') {
+         primero++;
+         PC = (char *)realloc(PC, (primero + 1) * sizeof(char));
+         if(PC == NULL){
+            return 0;
+         }
+         PC[primero] = current;  
+      } 
         
-        if (current == '(' || current == '{' || current == '[') {
-            top++;
-            PC = (char *) realloc(PC, (top + 1) * sizeof(char));
-            if (PC == NULL) {
-                return 0;  
-            }
-            PC[top] = current;  
-        } 
-        
-        else if (current == ')' || current == '}' || current == ']') {
-            if (top == -1) {
-                free(PC);  
-                return 0;
-            }
-
-            
-            char caracter = PC[top];
-            if ((current == ')' && caracter == '(') || 
-                (current == ']' && caracter == '[') || 
-                (current == '}' && caracter == '{')) {
-                top--;  
-            } else {
-                free(PC);  
-                return 0;
-            }
-        }
+      else if (current == ')' || current == '}' || current == ']') {
+         if (primero == -1) {
+            free(PC);  
+            return 0;
+         }
+         char caracter = PC[primero];
+         if ((current == ')' && caracter == '(') || (current == ']' && caracter == '[') || (current == '}' && caracter == '{')) {
+            primero--;  
+         } else {
+            free(PC);  
+            return 0;
+         }
+      }
+   }
+   free(PC);
+   return primero == -1 ? 1 : 0;
 }
 
